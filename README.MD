@@ -35,4 +35,42 @@ Designed for high-performance asynchronous processing, it includes features like
 ---
 
 ## 📁 Project Structure
+go-queue/ ├── proto/ # gRPC .proto definitions ├── internal/ # Core business logic (queue, message, retry) │ └── message/ ├── cmd/ # Entry point (main.go) │ └── server/ ├── k8s/ # Kubernetes manifests ├── docker-compose.yml # Dev environment ├── README.md └── go.mod
+
+## 🛠 Getting Started
+
+### Prerequisites
+
+- Go 1.22+
+- MongoDB (local or remote)
+- `protoc` compiler with:
+  - `protoc-gen-go`
+  - `protoc-gen-go-grpc`
+  - `protoc-gen-grpc-gateway` (optional)
+
+### Clone the repo
+
+```bash
+git clone https://github.com/NavroO/go-queue.git
+cd go-queue
+
+### Generate gRPC code
+
+protoc \
+  --go_out=. \
+  --go-grpc_out=. \
+  proto/MessageService.proto
+
+If you are using grpc-gateway:
+
+protoc \
+  --go_out=. \
+  --go-grpc_out=. \
+  --grpc-gateway_out=. \
+  proto/MessageService.proto
+
+### Run the server
+```make run``` or go run ./cmd/server
+
+
 
