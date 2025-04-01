@@ -1,6 +1,6 @@
 # go-queue
 
-🚀 **go-queue** is a distributed, scalable message queue system built with **gRPC**, **MongoDB**, and **Go**.  
+🚀 **go-queue** is a distributed, scalable message queue system built with **gRPC**, **MongoDB**, and **Go**.
 Designed for high-performance asynchronous processing, it includes features like retry logic, TTL-based message expiration, metrics via Prometheus, and optional REST & UI layers.
 
 ---
@@ -35,7 +35,14 @@ Designed for high-performance asynchronous processing, it includes features like
 ---
 
 ## 📁 Project Structure
-go-queue/ ├── proto/ # gRPC .proto definitions ├── internal/ # Core business logic (queue, message, retry) │ └── message/ ├── cmd/ # Entry point (main.go) │ └── server/ ├── k8s/ # Kubernetes manifests ├── docker-compose.yml # Dev environment ├── README.md └── go.mod
+go-queue/
+  ├── proto/ # gRPC .proto definitions
+  ├── internal/ # Core business logic (queue, message, retry)
+  │ └── message/
+  ├── cmd/ # Entry point (main.go)
+  │ └── server/
+  ├── README.md
+└── go.mod
 
 ## 🛠 Getting Started
 
